@@ -35,7 +35,7 @@ else if(!empty($VVERBOSE)) {
 // Check for jobs every $interval seconds
 $interval = 5;
 $INTERVAL = getenv('INTERVAL');
-if(!empty($INTERVAL)) {
+if(!is_null($INTERVAL)) {
 	$interval = $INTERVAL;
 }
 

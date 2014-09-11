@@ -41,7 +41,13 @@ class ResqueScheduler_Worker
 		
 		while (true) {
 			$this->handleDelayedItems();
-			$this->sleep();
+
+			// For an interval of 0, break now - helps with unit testing etc
+			if($this->interval == 0) {
+				break;
+            } else {
+			    $this->sleep();
+            }
 		}
 	}
 	
